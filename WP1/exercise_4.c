@@ -6,15 +6,15 @@ char *endPointer;
 char *argv;
 long num;
 void givenDecimalToBinary(n) {
-    int binaryNum[sizeof(long) * 8];
-    int i = 0;
-    while (n > 0) {
-        binaryNum[i] = n % 2;
-        n = n / 2;
-        i++;
+    int binaryNum[sizeof(long) * 8];    // Adjusting the size of the array to a predetermined size of Long 
+    int i = 0;                          // Initilizing the size of the binary length
+    while (n > 0) {                     // A while loop to check as long as given number is larger than 0, then continue 
+        binaryNum[i] = n % 2;           // Mod n to find if it is a 0 or a 1 from the remainder
+        n = n / 2;                      // Divide n continously 
+        i++;                            // Add one to the index of the binary array 
     }
     printf("Binary representation of %ld is: ", num);
-    for (int j = i - 1; j >= 0; j--)
+    for (int j = i - 1; j >= 0; j--)    // This for loop will iterate through the binary array and print out the numbers 
         printf("%d", binaryNum[j]);
 }
 

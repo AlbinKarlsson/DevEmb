@@ -5,7 +5,7 @@ long given_decimal;
 char *endPointer;
 char *argv;
 long num;
-void givenDecimalToBinary(n) {
+void givenDecimalToBinary(int n) {
     int binaryNum[sizeof(long) * 8];    // Adjusting the size of the array to a predetermined size of Long 
     int i = 0;                          // Initilizing the size of the binary length
     while (n > 0) {                     // A while loop to check as long as given number is larger than 0, then continue 

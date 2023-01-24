@@ -12,5 +12,5 @@ void binary_to_hexdecimal(int i, int binary[]) {
         printf("%ld", binary[j]);   
     }
 
-    
+
 }

@@ -1,21 +1,26 @@
 #include <stdio.h>
 #include <limits.h>
+#include "exercise_4b.c"
 
 long given_decimal;
 char *endPointer;
 char *argv;
 long num;
+int i = 0;
+int binaryNum[sizeof(long) * 8];
 void givenDecimalToBinary(int n) {
-    int binaryNum[sizeof(long) * 8];    // Adjusting the size of the array to a predetermined size of Long 
-    int i = 0;                          // Initilizing the size of the binary length
     while (n > 0) {                     // A while loop to check as long as given number is larger than 0, then continue 
         binaryNum[i] = n % 2;           // Mod n to find if it is a 0 or a 1 from the remainder
         n = n / 2;                      // Divide n continously 
         i++;                            // Add one to the index of the binary array 
     }
     printf("Binary representation of %ld is: ", num);
-    for (int j = i - 1; j >= 0; j--)    // This for loop will iterate through the binary array and print out the numbers 
+
+    for (int j = i - 1; j >= 0; j--) {   // This for loop will iterate through the binary array and print out the numbers 
         printf("%d", binaryNum[j]);
+    }
+    printf("\n");
+    binary_to_hexdecimal(i, binaryNum);
 }
 
 int main(int argc, char *argv[]) {

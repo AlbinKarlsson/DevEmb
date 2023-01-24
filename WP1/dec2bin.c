@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <ctype.h>
+#include "bin2hec.c"
 
 int storage[sizeof(long) * 8], i;
 long number;
@@ -16,11 +17,25 @@ void decimalToBin(int n)
         number = number / 2;
     }
 
-    printf("\nNumber in binary: ");
+    int k;
+
+
+    printf("Number in binary: ");
+    
+    number = 8 - (i % 8); // Get the amount of 0 needed to format the output in an 8-bit format
+    for (k = 0; k < number; k++) { // For loop that runs binMod times
+        printf("%d", 0); // Prints 0
+    }
+
+    int m = i;
+
     for (i = i - 1; i >= 0; i--)
     {
         printf("%d", storage[i]);
     }
+
+    getBinaryNumber(m, storage);
+
 }
 
 int main(int argc, char *argv[])

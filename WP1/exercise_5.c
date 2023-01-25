@@ -12,7 +12,7 @@
 void create_random(int *tab ){
     srand(time(0));
     for(int i = 0; i < MAX; i++){
-            int random = (rand() % 20);
+            int random = (rand() % MAXNUMBER);
             tab[i] = random;
             // printf("%d,", tab[i]);
     }
@@ -73,7 +73,7 @@ int main (void){
     create_random(p);
     int counter1 = 0;
     for (int i = 0; i < MAX; i++){
-        printf("%d,", table[i]);
+        // printf("%d,", table[i]);
         counter1++;
     }
 
@@ -82,11 +82,5 @@ int main (void){
     }
     int *f = frequency;
     count_frequency(p, f);
-    printf("size of array: %d\n", counter1);
-    /*
-    for(int i = 0; i < MAXNUMBER; i++){
-        printf("Freq: %d : With number: %d \n", frequency[i], i);
-    }
-    */
     draw_histogram(f);
     } 

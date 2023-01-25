@@ -24,7 +24,10 @@ void givenDecimalToBinary(int n) {
 }
 
 int main(int argc, char *argv[]) {
-    num = strtol(argv[1], endPointer, 10);
+    // num = strtol(argv[1], endPointer, 10);
+
+    char *shift = argv[1];
+    sscanf(shift, "%ld", &num);
     if (num >= 0 && num <= LONG_MAX) {
         givenDecimalToBinary(num);
     } else {

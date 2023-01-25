@@ -6,7 +6,7 @@
 
 int storage[sizeof(long) * 8], i;
 long number;
-char *dummy;
+int k;
 
 void decimalToBin(int n)
 {
@@ -16,9 +16,6 @@ void decimalToBin(int n)
         storage[i] = number % 2;
         number = number / 2;
     }
-
-    int k;
-
 
     printf("Number in binary: ");
     

@@ -4,7 +4,6 @@
  
 #define MAX 100 // Defines the maximum number of the values in the table 
 #define MAXNUMBER 20 // Defines the maximum value of random numbers 
-int counter;
  
 // ------ Function declarations   ----------  
  
@@ -13,7 +12,7 @@ int counter;
 void create_random(int *tab ){
     srand(time(0));
     for(int i = 0; i < MAX; i++){
-            int random = (rand() % 21);
+            int random = (rand() % 20);
             tab[i] = random;
             // printf("%d,", tab[i]);
     }
@@ -24,25 +23,37 @@ void create_random(int *tab ){
 // This function takes the *tab of random numbers 
 // and creates a table with the frequency counts for these numbers 
 void count_frequency(int *tab, int *freq ){
-    for (int i = 0; i < MAX; i++){
-        printf("%d,", tab[i]);
-    }
+    int counter = 0;
     for(int i = 0; i < MAXNUMBER; i++){
+        counter = 0;
         for(int j = 0; j < MAX; j++){
-            if(tab[j] == freq[i]){
-                counter++;
+            if(tab[j] == i){
+                counter = counter + 1;
             } 
         }
         freq[i] = counter;
-    }
-    for(int i = 0; i < MAXNUMBER; i++){
-        printf("Freq: %d : With number: %d \n", freq[i], i);
     }
 }     
  
 // This function takes the frequency count table 
 // and draws a histogram of the values in that frequency table 
 void draw_histogram(int *freq ){
+    int counter = 0;
+    for(int i = 0; i < MAXNUMBER; i++){
+        while(freq[i] != 0){
+            freq[i] = freq[i] -1;
+            counter++;
+        }
+        
+        if(counter != 0){
+            printf("%d ", i);
+            for (int i = 0; i < counter; i++){
+            printf("X");
+            }
+            printf("\n");
+        }
+        counter = 0;
+    }
 }  
  
 // ------ Function definitions   ---------- 
@@ -60,14 +71,22 @@ int main (void){
     int frequency[MAXNUMBER]; 
     int *p = table;
     create_random(p);
-    /*
+    int counter1 = 0;
     for (int i = 0; i < MAX; i++){
         printf("%d,", table[i]);
+        counter1++;
     }
-    */
+
     for (int i = 0; i < MAXNUMBER; i++){
         frequency[i] = 0;
     }
     int *f = frequency;
     count_frequency(p, f);
+    printf("size of array: %d\n", counter1);
+    /*
+    for(int i = 0; i < MAXNUMBER; i++){
+        printf("Freq: %d : With number: %d \n", frequency[i], i);
+    }
+    */
+    draw_histogram(f);
     } 

@@ -32,6 +32,7 @@ void decimalToBin(int n)
     }
 
     getBinaryNumber(m, storage);
+    
 
 }
 

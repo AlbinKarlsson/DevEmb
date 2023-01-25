@@ -1,28 +1,27 @@
+int passArray[20];
+int k; 
+
 void getBinaryNumber(int i, int array[])
 {
-    int passArray[16];
-
-    printf("\n");
 
     while (i % 4 != 0)
     {
-        array[i];
         array[i] = 0;
         i++;
     }
 
-    for (i = i - 1; i >= 0; i--)
+    k = i;
+
+    printf("\n");
+
+    printf("Right order: ");
+    for (int m = 0; m < k; m++)
     {
-        passArray[i] = array[i];
-        printf("%ld", passArray[i]);
+        passArray[m] = array[i-1];
+        printf("%d", passArray[m]);
+        i--;
     }
 }
+    
 
-int from;
-int to;
 
-void checkNumbers(passArray, from, to)
-{
-    if()
-
-}

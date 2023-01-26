@@ -43,14 +43,14 @@ void draw_histogram(int *freq ){
             counter++;
         }
         
-        if(counter != 0){
+        if(counter != 0){                       // This if statement will sort away every MAXNUMBER that did not have any matches with table 
             printf("%d ", i);
-            for (int i = 0; i < counter; i++){
-            printf("X");
+            for (int i = 0; i < counter; i++){  // Loop through the amount of counter (times it had a match)
+            printf("X");                        // For each iteration print out an X 
             }
             printf("\n");
         }
-        counter = 0;
+        counter = 0;                            //Reset the counter for next iteration in the freq array
     }
 }  
  

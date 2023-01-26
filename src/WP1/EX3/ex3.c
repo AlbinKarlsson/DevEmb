@@ -19,6 +19,7 @@ number outside of the range or a character/string. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 int randomNumberGenerator(int lo, int hi)
 {
@@ -30,6 +31,8 @@ int randomNumberGenerator(int lo, int hi)
 
 void guesserGame()
 {
+    printf("\nGuess a number between 1-100\n\n");
+
     int lo = 1;
     int hi = 100;
     int count = 0;
@@ -49,6 +52,7 @@ void guesserGame()
     {
         // Increase the counter every time the while loop runs
         count++;
+        printf("You have %d guess(es) left", (MAX_COUNT - count + 1));
 
         // Keep track of guesses
         int guess;
@@ -59,17 +63,17 @@ void guesserGame()
         scanf("%d", &guess);
 
         // Check if input is a number. Provide error and exit if not.
-        if (strspn(guess, "0123456789") != strlen(guess))
-        {
-            printf("Please enter a valid number");
-            // Don't count invalid guesses
-            count--;
-        }
+        // if (strspn(guess, "0123456789") != strlen(guess))
+        // {
+        //     printf("Please enter a valid number");
+        //     // Don't count invalid guesses
+        //     count--;
+        // }
 
         // Print error message if users' guess is outside the range
         if (guess > 100 || guess < 1)
         {
-            printf("Your guess needs to be from 1 to 100");
+            printf("Your guess needs to be from 1 to 100\n");
             // Don't count invalid guesses
             count--;
         }
@@ -77,7 +81,7 @@ void guesserGame()
         // If the guess matches the generated number print success message
         else if (guess == number)
         {
-            printf("You have guessed %d time(s) and your guess is correct", count);
+            printf("You have guessed %d time(s) and your guess is correct\n", count);
             // Return to main function (end game)
             return;
         }
@@ -85,13 +89,13 @@ void guesserGame()
         // If the guess is lower, print a hint
         else if (guess < number)
         {
-            printf("Your guess is too low");
+            printf("Your guess is too low\n");
         }
 
         // If the guess is higher, print a hint
         else if (guess > number)
         {
-            printf("Your guess is too high");
+            printf("Your guess is too high\n");
         }
     }
 

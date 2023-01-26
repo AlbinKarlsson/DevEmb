@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
     if (strcmp(argv[1], "-h") == 0)
     {
         // Print help message and return 0
-        printf("To use the binary to hexadecimal conversion please provide a binary number as the second argument. E.g. 'bin2hec 1010101'");
+        printf("To use the binary to hexadecimal conversion please provide a binary number as the second argument. E.g. 'bin2hec 10101011'");
         return 0;
     }
 

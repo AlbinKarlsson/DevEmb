@@ -87,8 +87,6 @@ void binaryToHex(char *binary, char *hex)
 
 int main(int argc, char *argv[])
 {
-    printf("Provided argument: %s\n", argv[1]);
-    printf("Argument length: %d\n", strlen(argv[1]));
     // Check if the user provided the "-h" flag or if the user didn't provide any argument at all
     if (strcmp(argv[1], "-h") == 0)
     {
@@ -98,8 +96,6 @@ int main(int argc, char *argv[])
     }
 
     // Check if input is a number. Provide error and exit if not.
-    printf("strspn: %d\n", strspn(argv[1], "01"));
-    printf("strlen: %d\n", strlen(argv[1]));
     if (strlen(argv[1]) < 4)
     {
         printf("Please enter a valid binary\n");

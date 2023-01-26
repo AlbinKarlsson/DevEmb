@@ -1,55 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include <time.h>
 
 int main()
 {
-#define MAX 5
-    int r = rand() % 101;
-    int guess;
-    int guessCounter;
-    char response[10];
-    int convertedInt;
+    int guess;                      // This is the input guess variable from the user
+    int random_number;              // This is the random number variable that will be assigned later  
+    int number_of_guesses = 1;      // The program will also keep track of how many guesses
+    srand(time(0));                 // This will produce a new time seed to make the random number be a new number each time 
+    random_number = rand() % 100 + 1;   // This is the funcion to produce the random number 
 
-    printf("Guess a random number: ");
-    scanf("%d", &guess, guessCounter++);
-    
-            
-        while (-1 && guessCounter <= MAX)
-        {
+    printf("Guess a number between 1 and 100: \n");
+    scanf("%d", &guess);            // The input from the user 
 
-            if (guess >= 1 && guess <= 100)
-            {
-                if (guess == r)
-                {
-                    printf("You have guessed %d times and your answer is correct\n", guessCounter);
-                    printf("Do you want to finish or play a new round? type yes to play a new round and no to finish ");
-                    scanf("%s", response);
-                    if (strcmp(response, "yes") == 0)
-                    {
-                        main();
-                    }
-                    else if (strcmp(response, "no") == 0)
-                    {
-                        return 0;
-                    }
-                }
-                else if (guess < r)
-                {
-                    printf("Your answer is too low. ");
-                }
-                else if (guess > r)
-                {
-                    printf("Your answer is too high. ");
-                }
-            }
-            else
-            {
-                printf("Not an acceptable number.");
-            }
+    while (guess != random_number) {    // As long as the users guess is not the same number as the random assigned number it will loop until it matches 
+        if (guess < random_number) {    // If the guess is lower than the random number is will let the user know it is too low 
+            printf("Too low! Guess again: \n");
+        } else {
+            printf("Too high! Guess again: \n");    // Else the guess is too high 
         }
-    
+        scanf("%d", &guess);                        // Checking a new answer 
+        number_of_guesses++;                        // Adding another guess to the counter
+    }
+
+    printf("You guessed the correct number: %d\n", random_number);
+    printf("Your number of guesses: %d\n", number_of_guesses);
 
     return 0;
 }

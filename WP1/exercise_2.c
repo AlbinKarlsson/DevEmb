@@ -26,12 +26,13 @@ int main(int argc, char *argv[])
 
         int i;
         int j;
+        // Set to store 20 elements (we thought this was an sufficient length).
         char result[20];
 
         // loop through the length of the string the user has entered
         for (i = 0; i < strlen(givenString); ++i)
         {
-            // loop through the length of the alphabet string, -1 to not use \0
+            // loop through the length of the alphabet string for each character, -1 to not use \0
             for (j = 0; j < strlen(alpha) - 1; ++j)
             {
                 // if a character at a certain index mathes a letter in the alphabet

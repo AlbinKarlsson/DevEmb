@@ -87,7 +87,7 @@ void binaryToHex(char *binary, char *hex)
 
 int main(int argc, char *argv[])
 {
-    // Check if the user provided the "-h" flag or if the user didn't provide any argument at all
+    // Check if the user provided the "-h" flag
     if (strcmp(argv[1], "-h") == 0)
     {
         // Print help message and return 0

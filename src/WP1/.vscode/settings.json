@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "PIPE1.C": "cpp",
+        "limits.h": "c"
+    }
+}

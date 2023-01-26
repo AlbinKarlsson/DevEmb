@@ -7,7 +7,7 @@ int main()
     int guess;                      // This is the input guess variable from the user
     int random_number;              // This is the random number variable that will be assigned later  
     int number_of_guesses = 1;      // The program will also keep track of how many guesses
-    srand(time(0));                 // THis will produce a new time seed to make the random number be a new number each time 
+    srand(time(0));                 // This will produce a new time seed to make the random number be a new number each time 
     random_number = rand() % 100 + 1;   // This is the funcion to produce the random number 
 
     printf("Guess a number between 1 and 100: \n");

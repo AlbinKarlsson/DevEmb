@@ -41,24 +41,26 @@ int calculateNeededBits(int decimal)
     // Check if number can be represented by 8, 16 or 32 bits and assign the needed value to bits
     if (bits <= 8)
         bits = 8;
+    // else if (bits <= 12)
+    //     bits = 12;
     else if (bits <= 16)
         bits = 16;
     else if (bits <= 32)
         bits = 32;
 
-    // printf("Number of bits: %d\n", bits);
-
     // Return the number of bits
     return bits;
 }
-
-void decimalToBinary(int decimal, int bits, char *binary)
+void decimalToBinary(int decimal, int bits)
 {
+    // Instantiate array for string
+    int binary[bits];
+
     // Initialize all elements in the array to '0'
     int i;
     for (i = 0; i < bits; i++)
     {
-        binary[i] = '0';
+        binary[i] = 0;
     }
 
     // Set the index to the last element in the array
@@ -68,7 +70,8 @@ void decimalToBinary(int decimal, int bits, char *binary)
     while (decimal > 0)
     {
         // Use modulus to get the last digit of the decimal number in binary and convert to character
-        binary[i] = (decimal % 2) + '0';
+        // binary[i] = (decimal % 2) + '0';
+        binary[i] = decimal % 2;
 
         // Use integer division to ensure we are working with even numbers
         decimal /= 2;
@@ -77,8 +80,15 @@ void decimalToBinary(int decimal, int bits, char *binary)
         i--;
     }
 
+    for (int i = 0; i < bits; i++)
+    {
+        printf("%d", binary[i]);
+    }
+
+    // Print the binary representation of the decimal number
+
     // Add null character to end of string
-    binary[bits] = '\0';
+    // binary[bits] = '\0';
 }
 
 int main(int argc, char *argv[])
@@ -109,14 +119,8 @@ int main(int argc, char *argv[])
     // Find the number of bits needed to convert the decimal
     int bits = calculateNeededBits(decimal);
 
-    // Instantiate array for string
-    char binary[bits];
-
     // Convert the decimal to binary
-    decimalToBinary(decimal, bits, binary);
-
-    // Print the binary representation of the decimal number
-    printf("%s\n", binary);
+    decimalToBinary(decimal, bits);
 
     // Return 0 to indicate success
     return 0;

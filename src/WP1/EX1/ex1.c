@@ -1,16 +1,10 @@
-// EXERCISE 1: IF-STATEMENTS
-// Write a program that reads in an integer number between 1 and 5 from the keyboard and prints out one of
-// existing five sentences on the console depending on what number was entered. You can invent the sentences
-// as you want, but each sentence should be unique.
-// The program continues to ask for a new number and exits if number isn ́t in the interval 1 to 5.
-
 #include <stdio.h>
 #include <string.h>
 
 // Main function in the program, takes arguments
 int main(int argc, char *argv[])
 {
-    // Initialize 'number' variable with the value 1
+    // Initialize 'number' variable
     int number;
 
     // Do the following while the value of number is between 1-5, otherwise, exit

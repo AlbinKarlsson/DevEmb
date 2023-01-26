@@ -32,6 +32,7 @@ The programs should be fail-safe, i.e.
 #include <stdlib.h>
 #include <math.h>
 #include <limits.h>
+#include <ctype.h>
 
 void binaryToHex(char *binary, char *hex)
 {
@@ -85,6 +86,20 @@ void binaryToHex(char *binary, char *hex)
     hex[k] = '\0';
 }
 
+// function that checks if entered string is actually a number and does not contain any characters
+int isNumber(char number[])
+{
+    int i;
+    // loops through each digit in number, as long as it is not 0
+    for (i = 0; number[i] != 0; i++)
+    {
+        // checks if digits only or not
+        if (!isdigit(number[i]))
+            return 1;
+    }
+    return 0;
+}
+
 int main(int argc, char *argv[])
 {
     // Check if the user provided the "-h" flag or if the user didn't provide any argument at all
@@ -96,7 +111,7 @@ int main(int argc, char *argv[])
     }
 
     // Check if input is a number. Provide error and exit if not.
-    if (strlen(argv[1]) < 4)
+    if (isNumber(argv[1]) != 0 || strlen(argv[1]) < 4)
     {
         printf("Please enter a valid binary\n");
         return 2;

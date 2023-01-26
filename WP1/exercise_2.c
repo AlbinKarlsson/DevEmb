@@ -1,54 +1,55 @@
-#include <stdio.h>
-#include <string.h>
+/* EXERCISE 2: ENCRYPTION
+Create a very simple encryption program.
+The program “shifts characters” in the ASCII-code table of a given input string.
+In the example below, A has shifted 13 characters in the ASCII table to N, B to O, etc.
+The word HELLO becomes URYYB after encryption.
+The user enters a text and the program prints out the encrypted text.
+Let the program read character by character, and encrypt it as above.
+The program is repeated until EOF indicated the program ends.
+EOF means End Of File and is a special character,
+e.g. when the user enters Ctrl +Z for Windows and Ctrl + d for Linux system.
+The number of characters to shift should be provided as a program argument, e.g. my_program.exe 13 */
 
+/* Example of a test run:
+HELLO (+enter)
+URYYB
+Banana (+enter)
+Onanan
+( +Ctrl-z)
+(Program ends) */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Function that takes an array of characters and shifts them in the ascii table by the provided offset
+char encrypt(char character, int offset)
+{
+    // Add the offset to the character in ascii format
+    int result = character + offset;
+    return result;
+};
+
+// Main function
 int main(int argc, char *argv[])
 {
+    // Initialize variable character
+    char character;
 
-    while (1)
+    // Get the users desired offset for the encryption
+    int offset = atoi(argv[1]);
+
+    // Repeat the following until the input equals end of file character
+    while (character != EOF)
     {
+        // Take a character from the user input
+        character = getchar();
 
-        // Store argument of switch number in shift as char array.
-        char *shift = argv[1];
+        // Call function to encrypt the input character
+        char encrypted = encrypt(character, offset);
 
-        // Converting the argument to an integer
-        int convertedArg;
-        sscanf(shift, "%d", &convertedArg);
-
-        // Store given string
-        char givenString[20];
-
-        // enter string to encrypt
-        printf("Enter a string: ");
-        scanf("%s", &givenString);
-
-        // String consisting of alphabet
-        char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-        int i;
-        int j;
-        char result[20];
-
-        // loop through the length of the string the user has entered
-        for (i = 0; i < strlen(givenString); ++i)
-        {
-            // loop through the length of the alphabet string, -1 to not use \0
-            for (j = 0; j < strlen(alpha) - 1; ++j)
-            {
-                // if a character at a certain index mathes a letter in the alphabet
-                if (givenString[i] == alpha[j])
-                {
-                    // check if the index of the character found + the added argument is bigger than or equal to the length of the alphabet
-                    if (j + convertedArg >= strlen(alpha))
-                    {
-                      // If bigger or equal, remove the length of the alphabet to start over in the alphabet and find the right character at position j
-                        j = j - strlen(alpha);
-                    }
-                    // result is the encrypted word by adding each character by findig the characters position with j and the given argument.
-                    result[i] = alpha[j + convertedArg];
-                }
-            }
-        }
-        printf("Encrypted word: %s\n", result);
+        // Print the the encrypted character
+        printf("%c", encrypted);
     }
+
     return 0;
-}
+};

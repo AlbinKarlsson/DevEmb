@@ -1,3 +1,21 @@
+// (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
+// Work package 1
+// Exercise 2
+// Submission code: BB12BBBB 
+
+/* This program takes one argument which is the number of times to shift a word
+Once the program starts, input a word in the terminal and press enter. 
+The terminal outputs the word you inputted with its characters shifted by the amount provided as argument
+Press Ctrl + Z to close the program
+
+E.g. 
+HELLO (+enter) 
+URYYB 
+Banana (+enter) 
+Onanan 
+( +Ctrl-z) 
+(Program ends) */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>

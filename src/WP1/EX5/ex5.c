@@ -1,3 +1,8 @@
+// (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
+// Work package 1
+// Exercise 5
+// Submission code: BB12BBBB 
+
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <time.h>

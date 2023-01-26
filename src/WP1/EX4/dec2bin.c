@@ -1,3 +1,8 @@
+// (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
+// Work package 1
+// Exercise 4 (dec2bin)
+// Submission code: BB12BBBB 
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

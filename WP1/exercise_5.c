@@ -16,9 +16,8 @@ void create_random(int *tab ){
             tab[i] = random;
             // printf("%d,", tab[i]);
     }
-
-
 }
+
  
 // This function takes the *tab of random numbers 
 // and creates a table with the frequency counts for these numbers 

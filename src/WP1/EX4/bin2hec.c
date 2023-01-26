@@ -1,32 +1,3 @@
-/* EXERCISE 4: NUMBER CONVERSION
-You should write two programs, which convert between numbers in different format. You should make sure that
-these programs can be executed in a pipeline.
-
-The programs should accept any number between 0 and the maximum value of type long in C for your compiler.
-
-The program should use the smallest possible datatype for a given, number. For example, if the user inputs 12,
-the program should use treat this as 8 bits and format the output accordingly. If the user inputs 1200, then the
-program should format the output as 16 bits, etc.
-
-The first program must convert a number in a decimal format to a binary format.
-    dec2bin.exe 12 should result in 00001100
-
-The second program should convert binary to hexadecimal value.
-    bin2hec.exe 00001111 should result in 0F
-
-You should use the program arguments so that it is possible to use these two programs like this:
-    dec2bin.exe 12 | bin2hec.exe
-
-The programs should be fail-safe, i.e.
-- Should check if the string of the argument contains the correct digits
-- Should check be able to provide help if the user provides the parameter ‘-h’
-- Should output an error message if the conversion was not successful
-- Should return 2 if the conversion is unsuccessful */
-/*--------------------------------------------------------------------------------------------------------- */
-
-/* CAN RUN BOTH THE PROGRAMS USING THE FOLLOWING IN LINUX */
-/* ./dec2bin.exe 12 | xargs -I{} ./bin2hec.exe {} */
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -43,38 +14,17 @@ void binaryToHex(char *binary, char *hex)
     // Array for comparing hexvalue to its corresponding character
     char hexLookup[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
-    /* Shifting basically 2x the decimal number in binary form
-    e.g.
-    0001 = 1
-    0001 << 1 = 0010
-    0010 = 2
-    0010 << 1 = 0100
-    0100 = 4
-    0100 << 1 = 1000
-    1000 = 8
-
-    To explain the inner loop we can use an example:
-    Convert 0011 to hexadecimal
-
-     Iteration     Comparisons
-         1       0000 << 1 = 0000
-                 0000 + 0000 = 0000
-         2       0000 << 1 = 0000
-                 0000 + 0000 = 0000
-         3       0000 << 1 = 0000
-                 0000 + 0001 = 0001
-         4       0001 << 1 = 0010
-                 0010 + 0001 = 0011 */
-
-    // Iterate through the binary string by 4 bits at a time
+    // Determine the hex value of a binary containing n bits
     for (i = 0; i < length; i += 4)
     {
         int hexValue = 0;
 
-        // Iterate through 4 bits
+        // Determine the hex value of 4 bits 
         for (j = i; j < i + 4; j++)
         {
-            // Shift the current hex value to the left by 1 (basically *2), add the current binary digit (1 or 0)
+            // 1. First parenthesis:   Shift hex value, i.e. multiply by 2
+            // 2. Second parenthesis:  Subtract ASCII value of the jth element by the ASCII value of 0 to get its int value
+            // 3. Add the second and first parenthesis
             hexValue = (hexValue << 1) + (binary[j] - '0');
         }
 

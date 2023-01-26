@@ -87,22 +87,26 @@ void binaryToHex(char *binary, char *hex)
 
 int main(int argc, char *argv[])
 {
-    // Check if the user provided the "-h" flag
+    printf("Provided argument: %s\n", argv[1]);
+    printf("Argument length: %d\n", strlen(argv[1]));
+    // Check if the user provided the "-h" flag or if the user didn't provide any argument at all
     if (strcmp(argv[1], "-h") == 0)
     {
         // Print help message and return 0
-        printf("To use the binary to hexadecimal conversion please provide a binary number as the second argument. E.g. 'bin2hec 10101011'");
+        printf("To use the binary to hexadecimal conversion please provide a binary number as the second argument. E.g. 'bin2hec 1010101'");
         return 0;
     }
 
     // Check if input is a number. Provide error and exit if not.
-    if (strspn(argv[1], "01") != strlen(argv[1]) || strlen(argv[1]) < 4)
+    printf("strspn: %d\n", strspn(argv[1], "01"));
+    printf("strlen: %d\n", strlen(argv[1]));
+    if (strlen(argv[1]) < 4)
     {
         printf("Please enter a valid binary\n");
         return 2;
     }
 
-    // Instantiate array for hexadecimal string. Divide binary by 4 since each hex digit is 4 binary digits
+    // Instantiate array for hexadecimal string. Divide binary by 4 and add 1 for null character
     char hex[strlen(argv[1]) / 4];
 
     // Convert binary to hexadecimal

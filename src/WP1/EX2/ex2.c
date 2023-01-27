@@ -9,6 +9,7 @@ The terminal outputs the word you inputted with its characters shifted by the am
 Press Ctrl + Z to close the program
 
 E.g. 
+ex2.exe 13 
 HELLO (+enter) 
 URYYB 
 Banana (+enter) 

@@ -1,7 +1,7 @@
 // (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
 // Work package 1
 // Exercise 3
-// Submission code: BB12BBBB 
+// Submission code: BB12BBBB
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,11 +10,13 @@
 #include <ctype.h>
 
 #define MAX_COUNT 10
+#define LO 1
+#define HI 100
 
-int randomNumberGenerator(int lo, int hi)
+int randomNumberGenerator()
 {
     // Generate a random number within the given range
-    int number = (rand() % (hi - lo + 1)) + 1;
+    int number = (rand() % (HI - LO + 1)) + 1;
     return number;
 }
 
@@ -36,15 +38,13 @@ void guesserGame()
 {
     printf("\nGuess a number between 1-100\n\n");
 
-    int lo = 1;
-    int hi = 100;
     int count = 0;
 
     // Use current time as seed for random number generation
     srand(time(0));
 
     // Generate a random number between 1 and 100
-    int number = randomNumberGenerator(lo, hi);
+    int number = randomNumberGenerator();
 
     while (count < MAX_COUNT)
     {
@@ -61,9 +61,11 @@ void guesserGame()
         scanf("%s", &input);
         int guess = atoi(input);
 
+        // If input insn't a number, print error
         if (isNumber(input) != 0)
         {
             printf("Your guess needs to a number\n");
+            // Don't count invalid guesses
             count--;
         }
 

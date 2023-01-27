@@ -70,19 +70,15 @@ void draw_histogram(int *freq ){
 // Please modify it accordingly 
 int main (void){ 
  
-    int table[MAX], n ;             // Initializing an array with MAX amount of elements 
-    int frequency[MAXNUMBER];       // Initializing an array with MAXNUMBER of elements  
-    int *p = table;                 // Initializing a pointer to where the table array address is
-    create_random(p);               // Call the create_ranom function and pass the pointer p to it
-    int counter1 = 0;                
-    for (int i = 0; i < MAX; i++){
-        counter1++;
-    }
+    int table[MAX], n ;                         // Initializing an array with MAX amount of elements 
+    int frequency[MAXNUMBER];                   // Initializing an array with MAXNUMBER of elements  
+    int *p = table;                             // Initializing a pointer to where the table array address is
+    create_random(p);                           // Call the create_ranom function and pass the pointer p to it
 
-    for (int i = 0; i < MAXNUMBER; i++){    // This will iterate through MAXNUMBER times over the array frequency
-        frequency[i] = 0;                   // To assign a value of 0 to each index, to later count how many
-    }                                       // times a number appears in the table array
-    int *f = frequency;                     // Initializing a pointer to where the frequency array address is
-    count_frequency(p, f);                  // Call the count_frequency function and pass p and f (pointers)
-    draw_histogram(f);                      // Call the draw_histogram function and pass f (pointer)
+    for (int i = 0; i < MAXNUMBER; i++){        // This will iterate through MAXNUMBER times over the array frequency
+        frequency[i] = 0;                       // To assign a value of 0 to each index, to later count how many
+    }                                           // times a number appears in the table array
+    int *f = frequency;                         // Initializing a pointer to where the frequency array address is
+    count_frequency(p, f);                      // Call the count_frequency function and pass p and f (pointers)
+    draw_histogram(f);                          // Call the draw_histogram function and pass f (pointer)
     } 

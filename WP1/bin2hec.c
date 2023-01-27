@@ -20,6 +20,7 @@ void getBinaryNumber(int i, int array[])
         i--;
     }
 
+
     long hexadecimalval = 0, p = 1, remainder;
 
     int t;

@@ -20,7 +20,6 @@ typedef struct
 
 char t[1];
 char m[1];
-char end[] = "X";
 char moveInput[5];
 
 void turn(enum DIRECTION *dirPoint)
@@ -106,10 +105,10 @@ int main()
         {
             break;
         }
-        x = getchar();            // to read a single char from user input
-        if (x == 'Q' || x == 'q') // if the user's input is Q or q
+        x = getchar();            
+        if (x == 'Q' || x == 'q') 
         {
-            break; // end loop
+            break; 
         }
 
         // Ask for the robots starting y position:
@@ -120,10 +119,10 @@ int main()
             break;
         }
 
-        x = getchar();            // to read a single char from user input
-        if (x == 'Q' || x == 'q') // if the user's input is Q or q
+        x = getchar();            
+        if (x == 'Q' || x == 'q') 
         {
-            break; // end loop
+            break; 
         }
 
         // Enter command t turn direction and command m to move in the current direction

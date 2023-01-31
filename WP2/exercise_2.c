@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     int data = rand() % 100 + 1;                             // Generate random number to be assigned to number in the added node in the list
     head = add_first(head, data);                            // Set the head pointer, pointing to the beginning of the list to be set to the added node.
     print_list(act_post, head);                              // Print list of random numbers, with the added node
-
+    
     // --- Free the allocated memory  ---
 
     while ((act_post = head) != NULL)                        // While loop to free up all allocated memory

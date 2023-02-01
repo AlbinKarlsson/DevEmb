@@ -23,6 +23,7 @@ void binary_to_hexdecimal(int i, int binary[]) {
         y = 10 * y + arr[t];
     }
 
+
     while (y != 0){
         remainder = y % 10;
         hexadecimalval = hexadecimalval + remainder * p;

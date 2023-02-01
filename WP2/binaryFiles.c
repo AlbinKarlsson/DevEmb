@@ -58,7 +58,7 @@ void search_by_firstname(char *name){
     fp = fopen("records.bin", "rb");
 
     while(fread(&record, sizeof(PERSON), 1, fp) == 1) {
-        if(strcmp(record.firstname, name)== 0){
+        if((strcmp(record.firstname, name)== 0) || strcmp(record.famname, name)== 0){
             printf("|---------------------------------------------|\n");
             printf("|Firstname:         %s\n", record.firstname);
             printf("|Surname:           %s\n", record.famname);

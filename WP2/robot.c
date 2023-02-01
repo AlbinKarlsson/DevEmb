@@ -46,7 +46,7 @@ int main() {
                 while ((c = getchar()) != 'b') {
                         if (c == 'm') {
                                 move(&robot);
-                                printf("Robot took one step forward: [ X: %d ],[ Y:%d ]\n", robot.xPos, robot.yPos);
+                                printf("Robot took one step forward: [ X: %d ],[ Y: %d ]\n", robot.xPos, robot.yPos);
                         } else if (c == 't') {
                                 turn(&robot);
                                 printf("*Robot Turned 90 degrees clockwise*\n");

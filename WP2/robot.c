@@ -27,9 +27,11 @@ void turn(enum DIRECTION *dirPoint)
     if (*dirPoint == 0)
     {
         *dirPoint = 1;
+        printf("Print out east: %d \n", *dirPoint);
     }
     else if (*dirPoint == 1)
     {
+        printf("Print out South: %d \n", *dirPoint);
         *dirPoint = 2;
     }
     else if (*dirPoint == 2)
@@ -87,16 +89,15 @@ void printLocation(int *mPointX, int *mPointY, enum DIRECTION *dirPoint)
 int main()
 {
     int x;
+    // Create a new robot
+    ROBOT robot = {0, 0, N};
+
+    int *mPointX = &robot.xpos;
+    int *mPointY = &robot.ypos;
+    enum DIRECTION *dirPoint = &robot.dir;
 
     while (1)
     {
-
-        // Create a new robot
-        ROBOT robot = {0, 0, N};
-
-        int *mPointX = &robot.xpos;
-        int *mPointY = &robot.ypos;
-        enum DIRECTION *dirPoint = &robot.dir;
 
         // Ask for the robots starting x postition:
         printf("Enter the starting X coordinate: ");
@@ -105,10 +106,10 @@ int main()
         {
             break;
         }
-        x = getchar();            
-        if (x == 'Q' || x == 'q') 
+        x = getchar();
+        if (x == 'Q' || x == 'q')
         {
-            break; 
+            break;
         }
 
         // Ask for the robots starting y position:
@@ -119,10 +120,10 @@ int main()
             break;
         }
 
-        x = getchar();            
-        if (x == 'Q' || x == 'q') 
+        x = getchar();
+        if (x == 'Q' || x == 'q')
         {
-            break; 
+            break;
         }
 
         // Enter command t turn direction and command m to move in the current direction

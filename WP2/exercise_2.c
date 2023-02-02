@@ -103,4 +103,5 @@ REGTYPE *print_list(REGTYPE *act_post, REGTYPE *head)        // Function to prin
         printf("\n Post nr %d : %d", nr++, act_post->number);// Print location and number of each node in the list  
         act_post = act_post->next;                           // Loop through list and set act_post to the next node in the list iteratively
     }
+    printf("\n");
 }

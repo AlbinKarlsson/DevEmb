@@ -176,6 +176,7 @@ void search_by_firstname(char *name)
             printf("Firstname: %s\n", myRecord.firstname);
             printf("Surname: %s\n", myRecord.famname);
             printf("Personal number: %s\n", myRecord.pers_number);
+            printf("\n");
         }
     }
     if (found == 0)

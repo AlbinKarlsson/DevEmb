@@ -103,14 +103,8 @@ int main(void){                                             // Declare a PERSON 
         clrscr();                                           // Make it cleaner by clearing the terminal, using a clearing function 
         switch (selection) {                                // Switch case function for each choice 
             case 1:                                         // Case 1 out of 4 + default
-                printf("Add a new person to a new file\n");
-                printf("New persons name: \n");
-                scanf("%s", ppost.firstname);               // Take input and store in ppost.firstname
-                printf("New persons surname: \n");
-                scanf("%s", ppost.famname);                 // Take input and store in ppost.famname
-                printf("New persons date of birth (yyyymmddxxxx): \n");
-                scanf("%s", ppost.pers_number);             // Take input and store in ppost.pers_number
-                append_file(&ppost);                        // Send the address of ppost to the function append_file 
+                PERSON dummy = {"John", "Doe", "199904223478"};  // Assging 'dummy' data to ppost
+                append_file(&dummy);                        // Send the address of ppost to the function append_file 
                 break;                                      // Break after executing this case
             case 2:                                         // Case 2 out of 4 + default
                 printf("Add a new person in the file\n");

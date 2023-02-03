@@ -1,3 +1,8 @@
+// (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
+// Work package 2
+// Exercise 4
+// Submission code: C12CCCCC 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>

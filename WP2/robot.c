@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdio.h>
 #include <string.h>
 
 // Robots directions
@@ -18,20 +17,14 @@ typedef struct
     enum DIRECTION dir;
 } ROBOT;
 
-char t[1];
-char m[1];
-char moveInput[5];
-
 void turn(enum DIRECTION *dirPoint)
 {
     if (*dirPoint == 0)
     {
         *dirPoint = 1;
-        printf("Print out east: %d \n", *dirPoint);
     }
     else if (*dirPoint == 1)
     {
-        printf("Print out South: %d \n", *dirPoint);
         *dirPoint = 2;
     }
     else if (*dirPoint == 2)
@@ -60,7 +53,7 @@ void move(int *mPointX, int *mPointY, enum DIRECTION *dirPoint)
     }
     else if (*dirPoint == 3)
     {
-        (*mPointY)--;
+        (*mPointX)--;
     }
 }
 
@@ -88,62 +81,69 @@ void printLocation(int *mPointX, int *mPointY, enum DIRECTION *dirPoint)
 
 int main()
 {
-    int x;
     // Create a new robot
     ROBOT robot = {0, 0, N};
 
     int *mPointX = &robot.xpos;
     int *mPointY = &robot.ypos;
     enum DIRECTION *dirPoint = &robot.dir;
+    char c;
+    int stop;
 
-    while (1)
+    while (!stop)
     {
 
         // Ask for the robots starting x postition:
         printf("Enter the starting X coordinate: ");
-        scanf("%d", mPointX);
+        scanf(" %d", mPointX);
         if (*mPointX < 0 || *mPointX > 99)
         {
             break;
         }
-        x = getchar();
-        if (x == 'Q' || x == 'q')
+        c = getchar();
+
+        if (c == 'q')
         {
             break;
         }
 
         // Ask for the robots starting y position:
         printf("Enter the starting Y coordinate: ");
-        scanf("%d", mPointY);
+        scanf(" %d", mPointY);
         if (*mPointX < 0 || *mPointX > 99)
         {
             break;
         }
+        c = getchar();
 
-        x = getchar();
-        if (x == 'Q' || x == 'q')
+        if (c == 'q')
         {
             break;
         }
 
         // Enter command t turn direction and command m to move in the current direction
-        printf("Enter 't' to turn direction and 'm' for moving one step in the current direction: ");
-        scanf("%s", moveInput);
+        printf("Enter 't' to turn direction and 'm' for moving one step in the current direction: \n");
 
-        if (strcmp(moveInput, "Q") == 0 || strcmp(moveInput, "q") == 0)
+        while ((c = getchar()) != 'x')
         {
-            break;
+            if (c == 't')
+            {
+                turn(dirPoint);
+            }
+            else if (c == 'm')
+            {
+                move(mPointX, mPointY, dirPoint);
+            }
+            else if (c == 'q')
+            {
+                stop = 1;
+                break;
+            }
+            else if (c == '\n')
+            {
+                break;
+            }
         }
-
-        if (strcmp(moveInput, "t") == 0)
-        {
-            turn(dirPoint);
-        }
-        else if (strcmp(moveInput, "m") == 0)
-        {
-            move(mPointX, mPointY, dirPoint);
-        }
-
         printLocation(mPointX, mPointY, dirPoint);
     }
 

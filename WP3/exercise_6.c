@@ -3,18 +3,15 @@
 
 void copyStringLibrary(char s[]);
 void copyString(char s[]);
-#define BUFFERSIZE 100
+#define BUFFERSIZE 21
 
 int main () { 
 
     char inputString[21];
    
-    printf("Enter a string of maximum 20 characters or read from file: ");
+    printf("Enter a string: ");
     scanf("%s", inputString);
     printf("\n");
-
-    char buffer[BUFFERSIZE];
-    fgets(buffer, BUFFERSIZE , stdin);
     
     copyStringLibrary(inputString);
     copyString(inputString);
@@ -34,14 +31,14 @@ void copyString(char s[])
         secondCopy[i] = s[i];
     }
 
-    printf("String method: %s\n", secondCopy);
+    printf("String copied with copyString method: %s\n", secondCopy);
  
 }
 
 void copyStringLibrary(char s[]){
-     char copy[21];
+    char copy[21];
     strcpy(copy, s);
 
-    printf("Your string: %s\n", copy);
+    printf("String copied with strcpy: %s\n", copy);
 
 }

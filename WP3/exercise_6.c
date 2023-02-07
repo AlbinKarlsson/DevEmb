@@ -9,12 +9,12 @@ int main () {
 
     char inputString[21];
    
-    printf("Enter a string of maximum 20 characters: ");
+    printf("Enter a string of maximum 20 characters or read from file: ");
     scanf("%s", inputString);
+    printf("\n");
 
     char buffer[BUFFERSIZE];
     fgets(buffer, BUFFERSIZE , stdin);
-    printf("Read: %s", buffer);
     
     copyStringLibrary(inputString);
     copyString(inputString);

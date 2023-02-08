@@ -9,9 +9,7 @@ int main () {
 
     char inputString[21];
    
-    printf("Enter a string: ");
     scanf("%s", inputString);
-    printf("\n");
     
     copyStringLibrary(inputString);
     copyString(inputString);

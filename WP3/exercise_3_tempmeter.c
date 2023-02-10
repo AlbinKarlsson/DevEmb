@@ -18,7 +18,7 @@ void setup()
 void loop()
 {
     // put your main code here, to run repeatedly:
-    
+    // Source https://www.programmingelectronics.com/arduino-sketch-with-millis-instead-of-delay/
     unsigned long currentTime = millis();                                   // Initialize unsigned long called CurrentTime with the millis function, returning number of milliseconds since start of program
     if (currentTime - previousTime >= eventInterval)                        // Only read temperature meter if currentTime - previousTime is bigger or equal to the defined event interval.
     {   

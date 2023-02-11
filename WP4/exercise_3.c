@@ -2,6 +2,8 @@
 #define PIN 6
 #define sensorPinZero A0
 
+// https://arduinogetstarted.com/tutorials/arduino-neopixel-led-strip
+
 float temperature;
 float voltage;
 

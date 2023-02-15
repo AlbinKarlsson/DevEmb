@@ -6,7 +6,7 @@ void sort (int number, int tab []);
 void main()
 {
     int test[] = {1, 2, 34, 5, 67, 3, 23, 12, 13, 10};
-    int result = search_number(10, test, 10);
+    int result = search_number(5, test, 10);
     printf("Index of searched number: %d\n", result);
 
     sort(10, test);
@@ -14,9 +14,10 @@ void main()
 
 int search_number(int number, int tab[], int size)
 {
-
+ 
     for (int i = 0; i < size; i++)
     {
+        printf("%d", tab[i]);
         if (tab[i] == number)
         {
             return i;
@@ -35,7 +36,6 @@ void sort (int number, int tab []){
                 tab[j] = tab[j+1];
                 tab[j+1] = temp;
             }
-
         }
     }
     printf("Numbers sorted with bubble sort: ");

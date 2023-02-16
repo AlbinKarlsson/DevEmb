@@ -1,3 +1,8 @@
+// (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
+// Work package 3
+// Exercise 6
+// Submission code: D12DDDDD 
+
 #include <string.h>
 #include <stdio.h>
 

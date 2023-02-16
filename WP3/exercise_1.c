@@ -1,5 +1,11 @@
+// (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
+// Work package 3
+// Exercise 1
+// Submission code: D12DDDDD 
+
 // C++ code
-//
+// This code corresponds to image ex1.jpeg in the images folder 
+
 void setup()                                                                // Initial setup loop
 {
   pinMode(2, INPUT);                                                        // Configue pin2 to behave as input

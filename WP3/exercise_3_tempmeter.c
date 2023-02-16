@@ -1,3 +1,11 @@
+// (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
+// Work package 3
+// Exercise 3
+// Submission code: D12DDDDD 
+
+// This code corresponds to image ex3.jpeg in the images folder 
+
+
 float temperature;                                                   // Declare temperature variable   
 float celsius;                                                       // Declare celsius variable  
 float voltage;                                                       // Declare voltage variable  

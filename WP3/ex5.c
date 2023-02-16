@@ -1,14 +1,7 @@
-// Write a program that creates an array of integers, array[MAX], and then fill it with MAX number of random
-// integers from 1 to 99.  Let then the program prints out the following:
-
-// - The value of the address of the array (pointer) is:  xxxxxxxxxx
-// - First integer in the array is (array[0]):  xxxxxxxxxx
-// - The last integer in the array is:  xxxxxxxxxx
-// - The size of an integer (number of bytes) is: xxxxxxxxx
-// - The size of the whole array in bytes is: xxxxxxxxx
-
-// The program shall then, by use of a pointer, print out each integer value and then print the value multiplied by
-// two.
+// (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
+// Work package 3
+// Exercise 5
+// Submission code: D12DDDDD 
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,3 +1,9 @@
+// (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
+// Work package 4
+// Exercise 1
+// Submission code: 98764 TA Bardha
+// Se image 'ex1.png'
+
 #include <TimerOne.h>
 
 // Define the LED pins

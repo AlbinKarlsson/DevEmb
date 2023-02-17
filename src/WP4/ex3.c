@@ -1,3 +1,9 @@
+// (C) Felix Valkama, Erik Lindmaa, Albin Karlsson, group: 12 (2022)
+// Work package 4
+// Exercise 3
+// Submission code: 98764 TA Bardha
+// See image 'ex3.png'
+
 #include <Adafruit_NeoPixel.h>
 #define PIN 6               // Define PIN 6 to be used for input from the Neopixel
 #define sensorPinZero A0    // Define A0 as sensorPinZero
